@@ -8,6 +8,7 @@ export let Model = Mixin.create({
   время: DS.attr('string'),
   дата: DS.attr('date'),
   номер: DS.attr('number'),
+  организация: DS.belongsTo('i-i-s-prilozhenie-03-организация', { inverse: null, async: false }),
   спрОбъектСтр: DS.belongsTo('i-i-s-prilozhenie-03-спр-объект-стр', { inverse: null, async: false }),
   спрПользов: DS.belongsTo('i-i-s-prilozhenie-03-спр-пользов', { inverse: null, async: false }),
   тЧФактВыпР: DS.hasMany('i-i-s-prilozhenie-03-т-ч-факт-вып-р', { inverse: 'фактВыполРаб', async: false })
@@ -32,6 +33,13 @@ export let ValidationRules = {
     validators: [
       validator('ds-error'),
       validator('number', { allowString: true, allowBlank: true, integer: true }),
+    ],
+  },
+  организация: {
+    descriptionKey: 'models.i-i-s-prilozhenie-03-факт-выпол-раб.validations.организация.__caption__',
+    validators: [
+      validator('ds-error'),
+      validator('presence', true),
     ],
   },
   спрОбъектСтр: {
@@ -62,12 +70,15 @@ export let defineProjections = function (modelClass) {
     номер: attr('Номер', { index: 0 }),
     дата: attr('Дата', { index: 1 }),
     время: attr('Время', { index: 2 }),
-    спрПользов: belongsTo('i-i-s-prilozhenie-03-спр-пользов', 'Пользователь', {
-      фИО: attr('Пользователь', { index: 4 })
+    организация: belongsTo('i-i-s-prilozhenie-03-организация', 'Организация', {
+      наименование: attr('Организация', { index: 4 })
     }, { index: 3 }),
-    спрОбъектСтр: belongsTo('i-i-s-prilozhenie-03-спр-объект-стр', 'Объект строительства', {
-      наименование: attr('Объект строительства', { index: 6 })
+    спрПользов: belongsTo('i-i-s-prilozhenie-03-спр-пользов', 'Пользователь', {
+      фИО: attr('Пользователь', { index: 6 })
     }, { index: 5 }),
+    спрОбъектСтр: belongsTo('i-i-s-prilozhenie-03-спр-объект-стр', 'Объект строительства', {
+      наименование: attr('Объект строительства', { index: 8 })
+    }, { index: 7 }),
     тЧФактВыпР: hasMany('i-i-s-prilozhenie-03-т-ч-факт-вып-р', 'Табличная Часть Фактическое выполнение работ', {
       статЗатр: attr('Статья затрат', { index: 0 }),
       спрНомен: belongsTo('i-i-s-prilozhenie-03-спр-номен', 'Номенклатура', {
@@ -108,6 +119,9 @@ export let defineProjections = function (modelClass) {
     }, { index: -1, hidden: true }),
     спрОбъектСтр: belongsTo('i-i-s-prilozhenie-03-спр-объект-стр', 'Объект строительства', {
       наименование: attr('Объект строительства', { index: 4 })
+    }, { index: -1, hidden: true }),
+    организация: belongsTo('i-i-s-prilozhenie-03-организация', 'Организация', {
+      наименование: attr('Организация', { index: 5 })
     }, { index: -1, hidden: true })
   });
 };

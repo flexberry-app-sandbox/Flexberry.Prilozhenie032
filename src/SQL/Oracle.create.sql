@@ -82,6 +82,8 @@ CREATE TABLE "ФактВыполРаб"
 
 	"Номер" NUMBER(10) NULL,
 
+	"Организация" RAW(16) NOT NULL,
+
 	"СпрПользов" RAW(16) NOT NULL,
 
 	"СпрОбъектСтр" RAW(16) NOT NULL,
@@ -226,6 +228,8 @@ CREATE TABLE "ДокПланЗаНаД"
 	"Номер" NUMBER(10) NULL,
 
 	"Время" NVARCHAR2(255) NULL,
+
+	"Организация" RAW(16) NOT NULL,
 
 	"СпрПользов" RAW(16) NOT NULL,
 
@@ -503,6 +507,11 @@ ALTER TABLE "ТЧФактВыпР"
 CREATE INDEX "ТЧФактВыпР_IФ_9215" on "ТЧФактВыпР" ("ФактВыполРаб");
 
 ALTER TABLE "ФактВыполРаб"
+	ADD CONSTRAINT "ФактВыполРаб__5464" FOREIGN KEY ("Организация") REFERENCES "Организация" ("primaryKey");
+
+CREATE INDEX "ФактВыполРаб__1812" on "ФактВыполРаб" ("Организация");
+
+ALTER TABLE "ФактВыполРаб"
 	ADD CONSTRAINT "ФактВыполРаб__4718" FOREIGN KEY ("СпрПользов") REFERENCES "СпрПользов" ("primaryKey");
 
 CREATE INDEX "ФактВыполРаб__8565" on "ФактВыполРаб" ("СпрПользов");
@@ -551,6 +560,11 @@ ALTER TABLE "ТЧПлЗНаД"
 	ADD CONSTRAINT "ТЧПлЗНаД_FДокП_53" FOREIGN KEY ("ДокПланЗаНаД") REFERENCES "ДокПланЗаНаД" ("primaryKey");
 
 CREATE INDEX "ТЧПлЗНаД_IДок_8772" on "ТЧПлЗНаД" ("ДокПланЗаНаД");
+
+ALTER TABLE "ДокПланЗаНаД"
+	ADD CONSTRAINT "ДокПланЗаНаД__5732" FOREIGN KEY ("Организация") REFERENCES "Организация" ("primaryKey");
+
+CREATE INDEX "ДокПланЗаНаД_I_908" on "ДокПланЗаНаД" ("Организация");
 
 ALTER TABLE "ДокПланЗаНаД"
 	ADD CONSTRAINT "ДокПланЗаНаД__8523" FOREIGN KEY ("СпрПользов") REFERENCES "СпрПользов" ("primaryKey");

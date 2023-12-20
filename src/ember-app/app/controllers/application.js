@@ -28,55 +28,55 @@ export default Controller.extend({
             link: 'i-i-s-prilozhenie-03-спр-тип-транс-ср-l',
             caption: i18n.t('forms.application.sitemap.справочники.i-i-s-prilozhenie-03-спр-тип-транс-ср-l.caption'),
             title: i18n.t('forms.application.sitemap.справочники.i-i-s-prilozhenie-03-спр-тип-транс-ср-l.title'),
-            icon: 'tasks',
+            icon: 'edit',
             children: null
           }, {
             link: 'i-i-s-prilozhenie-03-спр-ед-измер-l',
             caption: i18n.t('forms.application.sitemap.справочники.i-i-s-prilozhenie-03-спр-ед-измер-l.caption'),
             title: i18n.t('forms.application.sitemap.справочники.i-i-s-prilozhenie-03-спр-ед-измер-l.title'),
-            icon: 'calendar',
+            icon: 'building',
             children: null
           }, {
             link: 'i-i-s-prilozhenie-03-спр-трансп-ср-l',
             caption: i18n.t('forms.application.sitemap.справочники.i-i-s-prilozhenie-03-спр-трансп-ср-l.caption'),
             title: i18n.t('forms.application.sitemap.справочники.i-i-s-prilozhenie-03-спр-трансп-ср-l.title'),
-            icon: 'address card',
+            icon: 'building',
             children: null
           }, {
             link: 'i-i-s-prilozhenie-03-спр-виды-раб-l',
             caption: i18n.t('forms.application.sitemap.справочники.i-i-s-prilozhenie-03-спр-виды-раб-l.caption'),
             title: i18n.t('forms.application.sitemap.справочники.i-i-s-prilozhenie-03-спр-виды-раб-l.title'),
-            icon: 'calendar',
+            icon: 'edit',
             children: null
           }, {
             link: 'i-i-s-prilozhenie-03-спр-объект-стр-l',
             caption: i18n.t('forms.application.sitemap.справочники.i-i-s-prilozhenie-03-спр-объект-стр-l.caption'),
             title: i18n.t('forms.application.sitemap.справочники.i-i-s-prilozhenie-03-спр-объект-стр-l.title'),
-            icon: 'folder open',
+            icon: 'table',
             children: null
           }, {
             link: 'i-i-s-prilozhenie-03-спр-контр-аг-l',
             caption: i18n.t('forms.application.sitemap.справочники.i-i-s-prilozhenie-03-спр-контр-аг-l.caption'),
             title: i18n.t('forms.application.sitemap.справочники.i-i-s-prilozhenie-03-спр-контр-аг-l.title'),
-            icon: 'suitcase',
+            icon: 'briefcase',
             children: null
           }, {
             link: 'i-i-s-prilozhenie-03-спр-пользов-l',
             caption: i18n.t('forms.application.sitemap.справочники.i-i-s-prilozhenie-03-спр-пользов-l.caption'),
             title: i18n.t('forms.application.sitemap.справочники.i-i-s-prilozhenie-03-спр-пользов-l.title'),
-            icon: 'book',
+            icon: 'tasks',
             children: null
           }, {
             link: 'i-i-s-prilozhenie-03-спр-номен-l',
             caption: i18n.t('forms.application.sitemap.справочники.i-i-s-prilozhenie-03-спр-номен-l.caption'),
             title: i18n.t('forms.application.sitemap.справочники.i-i-s-prilozhenie-03-спр-номен-l.title'),
-            icon: 'tasks',
+            icon: 'chart bar',
             children: null
           }, {
             link: 'i-i-s-prilozhenie-03-организация-l',
             caption: i18n.t('forms.application.sitemap.справочники.i-i-s-prilozhenie-03-организация-l.caption'),
             title: i18n.t('forms.application.sitemap.справочники.i-i-s-prilozhenie-03-организация-l.title'),
-            icon: 'folder open',
+            icon: 'archive',
             children: null
           }]
         }, {
@@ -88,13 +88,13 @@ export default Controller.extend({
             link: 'i-i-s-prilozhenie-03-факт-выпол-раб-l',
             caption: i18n.t('forms.application.sitemap.документы.i-i-s-prilozhenie-03-факт-выпол-раб-l.caption'),
             title: i18n.t('forms.application.sitemap.документы.i-i-s-prilozhenie-03-факт-выпол-раб-l.title'),
-            icon: 'archive',
+            icon: 'edit',
             children: null
           }, {
             link: 'i-i-s-prilozhenie-03-док-план-за-на-д-l',
             caption: i18n.t('forms.application.sitemap.документы.i-i-s-prilozhenie-03-док-план-за-на-д-l.caption'),
             title: i18n.t('forms.application.sitemap.документы.i-i-s-prilozhenie-03-док-план-за-на-д-l.title'),
-            icon: 'file',
+            icon: 'building',
             children: null
           }]
         }

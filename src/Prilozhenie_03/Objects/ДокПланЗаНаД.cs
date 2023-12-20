@@ -33,6 +33,8 @@ namespace IIS.Prilozhenie_03
             "Номер as \'Номер\'",
             "Дата as \'Дата\'",
             "Время as \'Время\'",
+            "Организация as \'Организация\'",
+            "Организация.Наименование as \'Организация\'",
             "СпрПользов as \'Пользователь\'",
             "СпрПользов.ФИО as \'Пользователь\'",
             "СпрОбъектСтр as \'Объект строительства\'",
@@ -44,7 +46,8 @@ namespace IIS.Prilozhenie_03
             "Дата as \'Дата\'",
             "Время as \'Время\'",
             "СпрПользов.ФИО as \'Пользователь\'",
-            "СпрОбъектСтр.Наименование as \'Объект строительства\'"})]
+            "СпрОбъектСтр.Наименование as \'Объект строительства\'",
+            "Организация.Наименование as \'Организация\'"})]
     public class ДокПланЗаНаД : ICSSoft.STORMNET.DataObject
     {
         
@@ -53,6 +56,8 @@ namespace IIS.Prilozhenie_03
         private int fНомер;
         
         private string fВремя;
+        
+        private IIS.Prilozhenie_03.Организация fОрганизация;
         
         private IIS.Prilozhenie_03.СпрПользов fСпрПользов;
         
@@ -156,6 +161,40 @@ namespace IIS.Prilozhenie_03
                 // *** Start programmer edit section *** (ДокПланЗаНаД.Номер Set end)
 
                 // *** End programmer edit section *** (ДокПланЗаНаД.Номер Set end)
+            }
+        }
+        
+        /// <summary>
+        /// Док план за на Д.
+        /// </summary>
+        // *** Start programmer edit section *** (ДокПланЗаНаД.Организация CustomAttributes)
+
+        // *** End programmer edit section *** (ДокПланЗаНаД.Организация CustomAttributes)
+        [PropertyStorage(new string[] {
+                "Организация"})]
+        [NotNull()]
+        public virtual IIS.Prilozhenie_03.Организация Организация
+        {
+            get
+            {
+                // *** Start programmer edit section *** (ДокПланЗаНаД.Организация Get start)
+
+                // *** End programmer edit section *** (ДокПланЗаНаД.Организация Get start)
+                IIS.Prilozhenie_03.Организация result = this.fОрганизация;
+                // *** Start programmer edit section *** (ДокПланЗаНаД.Организация Get end)
+
+                // *** End programmer edit section *** (ДокПланЗаНаД.Организация Get end)
+                return result;
+            }
+            set
+            {
+                // *** Start programmer edit section *** (ДокПланЗаНаД.Организация Set start)
+
+                // *** End programmer edit section *** (ДокПланЗаНаД.Организация Set start)
+                this.fОрганизация = value;
+                // *** Start programmer edit section *** (ДокПланЗаНаД.Организация Set end)
+
+                // *** End programmer edit section *** (ДокПланЗаНаД.Организация Set end)
             }
         }
         

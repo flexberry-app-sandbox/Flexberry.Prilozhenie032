@@ -44,6 +44,7 @@ CREATE TABLE ФактВыполРаб (
  Время VARCHAR(255) NULL,
  Дата TIMESTAMP(3) NULL,
  Номер INT NULL,
+ Организация UUID NOT NULL,
  СпрПользов UUID NOT NULL,
  СпрОбъектСтр UUID NOT NULL,
  PRIMARY KEY (primaryKey));
@@ -120,6 +121,7 @@ CREATE TABLE ДокПланЗаНаД (
  Дата TIMESTAMP(3) NULL,
  Номер INT NULL,
  Время VARCHAR(255) NULL,
+ Организация UUID NOT NULL,
  СпрПользов UUID NOT NULL,
  СпрОбъектСтр UUID NOT NULL,
  PRIMARY KEY (primaryKey));
@@ -268,6 +270,9 @@ CREATE INDEX Index6275d261ab173ca2d27b64cec0e1e0906fcd832f on ТЧФактВып
  ALTER TABLE ТЧФактВыпР ADD CONSTRAINT FK410aa85b9390a2f524bfd6f66ce93219449b19ff FOREIGN KEY (ФактВыполРаб) REFERENCES ФактВыполРаб; 
 CREATE INDEX Index410aa85b9390a2f524bfd6f66ce93219449b19ff on ТЧФактВыпР (ФактВыполРаб); 
 
+ ALTER TABLE ФактВыполРаб ADD CONSTRAINT FK5bd7886af849859b0a9e6269bc7a1ee9472d5ac4 FOREIGN KEY (Организация) REFERENCES Организация; 
+CREATE INDEX Index5bd7886af849859b0a9e6269bc7a1ee9472d5ac4 on ФактВыполРаб (Организация); 
+
  ALTER TABLE ФактВыполРаб ADD CONSTRAINT FK12f57b966e1b354c1cdd7e8e266a16ab4d8c39e6 FOREIGN KEY (СпрПользов) REFERENCES СпрПользов; 
 CREATE INDEX Index12f57b966e1b354c1cdd7e8e266a16ab4d8c39e6 on ФактВыполРаб (СпрПользов); 
 
@@ -297,6 +302,9 @@ CREATE INDEX Indexc68eeee92fec27be705024a03c2f90e0995b68a2 on ТЧПлЗНаД (
 
  ALTER TABLE ТЧПлЗНаД ADD CONSTRAINT FK03d677498857c017bb3c050822879fa2032345bb FOREIGN KEY (ДокПланЗаНаД) REFERENCES ДокПланЗаНаД; 
 CREATE INDEX Index03d677498857c017bb3c050822879fa2032345bb on ТЧПлЗНаД (ДокПланЗаНаД); 
+
+ ALTER TABLE ДокПланЗаНаД ADD CONSTRAINT FK3cb2eeb6640ef24550d2a841df946c875058c8c6 FOREIGN KEY (Организация) REFERENCES Организация; 
+CREATE INDEX Index3cb2eeb6640ef24550d2a841df946c875058c8c6 on ДокПланЗаНаД (Организация); 
 
  ALTER TABLE ДокПланЗаНаД ADD CONSTRAINT FK81fbb905ae7456eaeeaa1838ff132654ebc92ff2 FOREIGN KEY (СпрПользов) REFERENCES СпрПользов; 
 CREATE INDEX Index81fbb905ae7456eaeeaa1838ff132654ebc92ff2 on ДокПланЗаНаД (СпрПользов); 

@@ -75,6 +75,8 @@ CREATE TABLE [ФактВыполРаб] (
 
 	 [Номер] INT  NULL,
 
+	 [Организация] UNIQUEIDENTIFIER  NOT NULL,
+
 	 [СпрОбъектСтр] UNIQUEIDENTIFIER  NOT NULL,
 
 	 [СпрПользов] UNIQUEIDENTIFIER  NOT NULL,
@@ -205,6 +207,8 @@ CREATE TABLE [ДокПланЗаНаД] (
 	 [Дата] DATETIME  NULL,
 
 	 [Номер] INT  NULL,
+
+	 [Организация] UNIQUEIDENTIFIER  NOT NULL,
 
 	 [СпрОбъектСтр] UNIQUEIDENTIFIER  NOT NULL,
 
